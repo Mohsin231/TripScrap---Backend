@@ -1,5 +1,5 @@
 //grab what is being exported which is the mongoose connection inside connections.js
-const mongoose =require('../db/connections')
+const mongoose =require('../db/connection')
 const Destination = require('./destination')
 //next build up your Schema! 
 
@@ -9,7 +9,7 @@ const TripScrapSchema = new mongoose.Schema(
             type: String,
             required: true, 
         },
-        save: {
+        complete: {
             type: Boolean, 
             default: false, 
             //if you don't enter a value for complete, it will just enter in false. 

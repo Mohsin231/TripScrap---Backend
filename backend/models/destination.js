@@ -13,6 +13,6 @@ const destinationSchema = new mongoose.Schema(
 
 const destination = mongoose.model('Destination', destinationSchema)
 
-User.createIndexes();
+// User.createIndexes();
 
 module.exports = destination
