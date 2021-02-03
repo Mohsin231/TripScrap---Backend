@@ -8,7 +8,7 @@ const destinationSchema = new mongoose.Schema(
       
     })
 
-//salt and hash protect your password 
+
 const destination = mongoose.model('Destination', destinationSchema)
 
 User.createIndexes();
