@@ -3,11 +3,9 @@ const mongoose = require('../db/connection')
 
 const destinationSchema = new mongoose.Schema(
     {
-        results_id: String,
+        id: String,
         parent_id: String,
-        results_country_id: String,
-        images_caption: String,
-        images_sizes_medium_url: String,
+        img
     })
 
 

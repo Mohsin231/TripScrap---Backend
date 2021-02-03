@@ -1,0 +1,42 @@
+{
+  "results": [
+{
+"id": "Chicago",
+"parent_id": "Illinois",
+"coordinates": {
+"latitude": 41.8830968,
+"longitude": -87.62645426993741
+},
+"score": 9.55166757092328,
+"country_id": "United_States",
+"type": "city",
+"images": [
+{
+"source_id": "flickr",
+"source_url": "https://live.staticflickr.com/3436/3195688409_50ec8ffe1b_4k.jpg",
+"caption": "Chicago Skyline",
+"attribution": {
+"format": "{attribution} / {license}",
+"attribution_text": "Bryce Edwards",
+"attribution_link": "http://www.flickr.com/photos/bryce_edwards",
+"license_text": "CC BY 2.0",
+"license_link": "http://creativecommons.org/licenses/by/2.0/"
+},
+"sizes": {
+original: {},
+medium: {
+url: "http://api-images-www.triposo.com/20201111/gAAAAABgGtuKFu8HzfsUP39-7zTNTModc0l0d-AdWnejwdYXG4Z0tlTdHJtcgLr_vQCSC8eh-ErcppyGuOPttRHBr6DUkM35L9RbinFV9CUC7NWsMNIRB2J8f6A_Z8IeHfUrzZvX6NekA9Qtd6nqP4I5Cq7vhscuYzSps_oK7AHo93yD41V5dO6QfbUXZjTr3vrC7Wngt9HK2KfN6-Varqf5VsYDDTHYDguRQU_g5Wc6flOYB2Wgx-NJiQY3HXJsYGlTctyBiYENzDxIVYhQWI5W3ecMk1u9UjT_YvzSvUrNtUo3fibRKfU=",
+width: 640,
+height: 359,
+bytes: 26332,
+format: "jpg"
+},
+thumbnail: {
+url: "http://api-images-www.triposo.com/20201111/gAAAAABgGtuKTFxLppwuCUq21S5YDzAXHK4RDxZqSsH8zEsMtXN3KGuxiYM03qESXi2a-4k2fXvaoWuVl96MNxGeHUcnyJyEC2oLb5Zhw82eVKPeAABeh4YFdHDjpxm53VRPqfbHyRvt-MBJFPRHetcgUhdf3V7H7ivpN-j4ozkewZdaC0VraD8fZhX6B1F9J5EPZ6JCRme8pF3Lyv90qDDazQdmK088ZKX9VSsHTARoTZnU1SUTQb8pen9lQuGktJ3HpYOTs84ZAHfsdYb0uWeYhx16mQ8noA==",
+width: 192,
+height: 107,
+bytes: 4128,
+format: "jpg"
+}
+  }
+
