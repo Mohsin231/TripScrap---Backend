@@ -1,5 +1,7 @@
 const mongoose = require('../db/connection')
 
+//when user enters destination into input field that asks "Where are you going?"
+
 
 const destinationSchema = new mongoose.Schema(
     {
