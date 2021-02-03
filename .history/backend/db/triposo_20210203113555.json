@@ -29,14 +29,14 @@
 "width": 640,
 "height": 359,
 "bytes": 26332,
-"format": "jpg"
+format: "jpg"
 },
-"thumbnail": {
-"url": "http://api-images-www.triposo.com/20201111/gAAAAABgGtuKTFxLppwuCUq21S5YDzAXHK4RDxZqSsH8zEsMtXN3KGuxiYM03qESXi2a-4k2fXvaoWuVl96MNxGeHUcnyJyEC2oLb5Zhw82eVKPeAABeh4YFdHDjpxm53VRPqfbHyRvt-MBJFPRHetcgUhdf3V7H7ivpN-j4ozkewZdaC0VraD8fZhX6B1F9J5EPZ6JCRme8pF3Lyv90qDDazQdmK088ZKX9VSsHTARoTZnU1SUTQb8pen9lQuGktJ3HpYOTs84ZAHfsdYb0uWeYhx16mQ8noA==",
-"width": 192,
-"height": 107,
+thumbnail: {
+url: "http://api-images-www.triposo.com/20201111/gAAAAABgGtuKTFxLppwuCUq21S5YDzAXHK4RDxZqSsH8zEsMtXN3KGuxiYM03qESXi2a-4k2fXvaoWuVl96MNxGeHUcnyJyEC2oLb5Zhw82eVKPeAABeh4YFdHDjpxm53VRPqfbHyRvt-MBJFPRHetcgUhdf3V7H7ivpN-j4ozkewZdaC0VraD8fZhX6B1F9J5EPZ6JCRme8pF3Lyv90qDDazQdmK088ZKX9VSsHTARoTZnU1SUTQb8pen9lQuGktJ3HpYOTs84ZAHfsdYb0uWeYhx16mQ8noA==",
+width: 192,
+height: 107,
 "bytes": 4128,
-"format": "jpg"
+format: "jpg"
 }
   }
 
