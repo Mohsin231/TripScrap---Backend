@@ -1,4 +1,3 @@
-//todo
 //grab what is being exported which is the mongoose connection inside connections.js
 const mongoose =require('../db/connection')
 const Destination = require('./destination')
