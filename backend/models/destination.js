@@ -1,16 +1,18 @@
-const mongoose = require('../db/connection')
+// const mongoose = require('./connection')
 
 
-const destinationSchema = new mongoose.Schema(
-    {
-        stateName: String, 
-        cityName: String 
-      
-    })
+// const destinationSchema = new mongoose.Schema(
+//     {
+//         results_id: String,
+//         parent_id: String,
+//         results_country_id: String,
+//         images_caption: String,
+//         images_sizes_medium_url: String,
+//     })
 
-//salt and hash protect your password 
-const destination = mongoose.model('Destination', destinationSchema)
 
-User.createIndexes();
+// const destination = mongoose.model('Destination', destinationSchema)
 
-module.exports = destination
+// // User.createIndexes();
+
+// module.exports = destination
