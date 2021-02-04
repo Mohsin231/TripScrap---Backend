@@ -1,5 +1,6 @@
-const mongoose = require("mongoose")
+// this is the index file that connects to MongoDB
 
+const mongoose = require("mongoose")
 
 const mongoURI = 
     process.env.NODE_ENV === 'production'
@@ -21,6 +22,8 @@ mongoose
     )
     .catch( (err) => console.log(`Connection to db failed due to: ${err}`))
 
-
+mongoose.Promise = Promise // outside ref
+// setting mongoose's Promise to use Node's Promise
     
-module.exports = mongoose
+// module.exports = mongoose
+module.exports.TripScrap = require("./tripscrap");

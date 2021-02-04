@@ -1,13 +1,14 @@
-//todo
-//grab what is being exported which is the mongoose connection inside connections.js
+// todo
+// grab what is being exported which is the mongoose connection inside connections.js
 
-const mongoose =require('./connection')
-const Destination = require('./destination')
+const mongoose = require("mongoose");
+// const Schema = mongoose.Schema;
+// const Destination = require('./destination')
 //next build up your Schema! 
 
 const TripScrapSchema = new mongoose.Schema(
     {
-        title: {
+        title: { // task
             type: String,
             unique:true, 
             required: true, 
@@ -17,7 +18,7 @@ const TripScrapSchema = new mongoose.Schema(
             default: false, 
             //if you don't enter a value for complete, it will just enter in false. 
         },
-        destination: {type: String, ref: Destination}
+        // destination: {type: String, ref: Destination}
     },
     {timestamps: true} 
     //when you enter something into a database a timestamp is created to track the updates
