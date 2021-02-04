@@ -1,6 +1,7 @@
 //todo
 //grab what is being exported which is the mongoose connection inside connections.js
-const mongoose =require('../db/connection')
+
+const mongoose =require('./connection')
 const Destination = require('./destination')
 //next build up your Schema! 
 
@@ -8,6 +9,7 @@ const TripScrapSchema = new mongoose.Schema(
     {
         title: {
             type: String,
+            unique:true, 
             required: true, 
         },
         complete: {
