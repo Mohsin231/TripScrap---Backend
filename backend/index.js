@@ -8,7 +8,12 @@ const cors = require("cors");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+//cors setup below
+app.use(cors({
+  origin: ["http://localhost:3001"], //telling cors that you will get request from this origin to access the data in this backend code. REACT will run on port 3001
+  credentials: true, 
+  optionsSuccessStatus: 200
+}));
 app.use(methodOverride("_method"));
 // const db = require("../backend/db/connection.js")
 

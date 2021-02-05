@@ -1,21 +1,23 @@
 // todo
 // grab what is being exported which is the mongoose connection inside connections.js
 
-const mongoose = require("mongoose");
+const mongoose = require("./connection");
+
 // const Schema = mongoose.Schema;
 // const Destination = require('./destination')
 //next build up your Schema! 
+//expand model
 
 const TripScrapSchema = new mongoose.Schema(
     {
         title: { // task
             type: String,
-            unique:true, 
-            required: true, 
+            // unique:true, 
+            // required: true, 
         },
         complete: {
             type: Boolean, 
-            default: false, 
+            // default: false, 
             //if you don't enter a value for complete, it will just enter in false. 
         },
         // destination: {type: String, ref: Destination}
