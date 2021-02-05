@@ -1,6 +1,6 @@
 const triposoData = require('./destination.json')
 const Destination = require('../models/destination')
-const User = require('./models/profile');
+// const User = require('../models/profile');
 
 
 Destination.deleteMany({})
