@@ -1,18 +1,51 @@
-// const mongoose = require('./connection')
+const mongoose = require('./connection')
 
 
-// const destinationSchema = new mongoose.Schema(
-//     {
-//         results_id: String,
-//         parent_id: String,
-//         results_country_id: String,
-//         images_caption: String,
-//         images_sizes_medium_url: String,
-//     })
+const destinationSchema = new mongoose.Schema(
+    {
+        results: [
+            {
+            id: String,
+            parent_id: String,
+            coordinates: {
+                latitude: Number,
+                longitude: Number
+            },
+            country_id: String,
+            type: String,
+            images: [{
+                source_id: String,
+                source_url: String,
+                caption: String,
+                sizes: {
+                    original: {},
+                    medium: {
+                        url: String,
+                        width: Number,
+                        height: Number,
+                        bytes: Number,
+                        format: String
+                    },
+                    thumbnail: {
+                        url: String,
+                        width: Number,
+                        height: Number,
+                        bytes: Number,
+                        format: String
+                    }
+                }
+            }]
+        }
+    ]//end of array
+    }
 
 
-// const destination = mongoose.model('Destination', destinationSchema)
 
-// // User.createIndexes();
+    )
 
-// module.exports = destination
+
+const Destination = mongoose.model('Destination', destinationSchema)
+
+// User.createIndexes();
+
+module.exports = Destination

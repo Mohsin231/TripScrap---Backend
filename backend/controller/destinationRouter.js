@@ -1,11 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const destination = require("../models/destination");
-const triposo
+const Destination = require("../models/destination");
 
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
+    const results = Destination.find({});
+    results.then((dest) => {
+      console.log(dest);
+      res.render("todos/index", { results_id: dest });
+    });
+  });
 
-})
+  module.exports = router
 
 // input field will trigger destinationRouter & destinationSchema,
 // destinationRouter will pull from Triposo API
