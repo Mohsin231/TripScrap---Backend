@@ -3,10 +3,10 @@ const router = express.Router();
 const Destination = require("../models/destination");
 
 router.get("/", (req, res) => {
-    const results = Destination.find({});
+    const results = Destination.find({})
     results.then((dest) => {
-      console.log(dest);
-      res.render("todos/index", { results_id: dest });
+      console.log(dest, "working?");
+      res.render("todos", { results_id: dest });
     });
   });
 
