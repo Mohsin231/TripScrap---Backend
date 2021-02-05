@@ -34,12 +34,12 @@ const destinationSchema = new mongoose.Schema(
                         format: String
                     }
                 }
-            }]
+            }],
+            
         }
     ]//end of array
-    }
-
-
+    },
+    { typeKey: '$type' }
 
     )
 
