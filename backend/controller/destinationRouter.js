@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
   router.get("/dest/:id", function(res, req) {
     Destination.find({
       id : req.params.id}, function(error, id) {
-        if(id==""){
+        if(id ==""){
           var req = require("req");
           console.log();
           res.statusCode = 302;
