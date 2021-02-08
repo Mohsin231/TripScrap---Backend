@@ -30,6 +30,7 @@ app.use("/todos", TripScrapRouter);
 app.use("/destination", DestinationRouter);
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 //telling the app that we are going to use json to handle incoming payload
 
 //test

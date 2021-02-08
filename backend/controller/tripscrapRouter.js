@@ -45,36 +45,37 @@ app.use((err, req, res, next) => {
 });
 
 
-// router.get("/", (req, res) => {
-//   const results = TripScrap.find({});
-//   results.then((tds) => {
-//     console.log(tds);
-//     res.render("todos/index", { todos: tds });
-//   });
-// });
+router.get("/", (req, res) => {
+  const results = TripScrap.find({});
+  results.then((tds) => {
+    console.log(tds);
+    res.render("todos/index", { todos: tds });
+  });
+});
 
-// router.get("/new", (req, res) => {
-//   res.render("todos/new");
-// });
+router.get("/new", (req, res) => {
+  res.render("todos/new");
+});
 
-// router.get("/:id/edit", (req, res) => {
-//   const id = req.params.id;
-//   TripScrap.findById(id)
-//     .then((todo) => {
-//       res.render("todos/edit", todo);
-//     })
-//     .catch(console.error);
-// });
+router.get("/:id/edit", (req, res) => {
+  const id = req.params.id;
+  TripScrap.findById(id)
+    .then((todo) => {
+      res.render("todos/edit", todo);
+    })
+    .catch(console.error);
+});
 
-// router.post("/", (req, res) => {
-//   // res.send('received!')
-//   console.log("in post");
-//   TripScrap.create(req.body)
-//     .then((todo) => {
-//       res.redirect("/todos");
-//     })
-//     .catch(console.error);
-// });
+router.post("/save", (req, res) => {
+  // res.send('received!')
+  console.log('Body: ', req.body)
+  // console.log("in post");
+  TripScrap.create(req.body)
+    .then((todo) => {
+      res.redirect("/todos");
+    })
+    .catch(console.error);
+});
 
 // router.delete("/:id", (req, res) => {
 //   TripScrap.findOneAndRemove({ _id: req.params.id })
