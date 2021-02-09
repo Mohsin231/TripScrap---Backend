@@ -3,86 +3,59 @@ const router = express.Router();
 const app = express();
 const TripScrap = require("../models/tripscrap");
 
-app.get("/", async (req, res, next) => {
-  try {
-    console.log("test")
-    const todos = await TripScrap.find({});
-    // return success(res, todos);
-    res.json({
-      data: todos, 
-      message: "all the todos"
-    })
-  } catch (err) {
-    next(err);
-  }
+router.get("/", (req, res, next) => {
+  TripScrap.find({})
+    .then((tripscrap) => res.json(tripscrap))
+    .catch(next);
 });
 
-app.post("/", async (req, res, next) => {
-  try {
-    const todo = await TripScrap.create(req.body);
-    return success(res, todo);
-  } catch (err) {
-    next({ status: 400, message: "failed to create todo" });
-  }
-});
-//if the data.length >= 1
-app.put("/todos/:id", async (req, res, next) => {
-  try {
-    const todo = await TripScrap.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
-    return success(res, todo);
-  } catch (err) {
-    next({ status: 400, message: "failed to update todo" });
-  }
-});
-app.delete("/todos/:id", async (req, res, next) => {
-  try {
-    await TripScrap.findByIdAndRemove(req.params.id);
-    return success(res, "todo deleted!");
-  } catch (err) {
-    next({ status: 400, message: "failed to delete todo" });
-  }
-});
-app.use((err, req, res, next) => {
-  return res.status(err.status || 400).json({
-    status: err.status || 400,
-    message: err.message || "there was an error processing request",
-  });
-});
+// app.get("/", async (req, res, next) => {
+//   try {
+//     console.log("test")
+//     const todos = await TripScrap.find({});
+//     // return success(res, todos);
+//     res.json({
+//       data: todos,
+//       message: "all the todos"
+//     })
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
-
-router.get("/", (req, res) => {
-  const results = TripScrap.find({});
-  results.then((tds) => {
-    console.log(tds);
-    res.render("todos/index", { todos: tds });
-  });
-});
-
-router.get("/new", (req, res) => {
-  res.render("todos/new");
-});
-
-router.get("/:id/edit", (req, res) => {
-  const id = req.params.id;
-  TripScrap.findById(id)
-    .then((todo) => {
-      res.render("todos/edit", todo);
-    })
-    .catch(console.error);
-});
-
-router.post("/save", (req, res) => {
-  // res.send('received!')
-  console.log('Body: ', req.body)
-  // console.log("in post");
-  TripScrap.create(req.body)
-    .then((todo) => {
-      res.redirect("/todos");
-    })
-    .catch(console.error);
-});
+// app.post("/", async (req, res, next) => {
+//   try {
+//     const todo = await TripScrap.create(req.body);
+//     return success(res, todo);
+//   } catch (err) {
+//     next({ status: 400, message: "failed to create todo" });
+//   }
+// });
+// //if the data.length >= 1
+// app.put("/todos/:id", async (req, res, next) => {
+//   try {
+//     const todo = await TripScrap.findByIdAndUpdate(req.params.id, req.body, {
+//       new: true,
+//     });
+//     return success(res, todo);
+//   } catch (err) {
+//     next({ status: 400, message: "failed to update todo" });
+//   }
+// });
+// app.delete("/todos/:id", async (req, res, next) => {
+//   try {
+//     await TripScrap.findByIdAndRemove(req.params.id);
+//     return success(res, "todo deleted!");
+//   } catch (err) {
+//     next({ status: 400, message: "failed to delete todo" });
+//   }
+// });
+// app.use((err, req, res, next) => {
+//   return res.status(err.status || 400).json({
+//     status: err.status || 400,
+//     message: err.message || "there was an error processing request",
+//   });
+// });
 
 // router.delete("/:id", (req, res) => {
 //   TripScrap.findOneAndRemove({ _id: req.params.id })
