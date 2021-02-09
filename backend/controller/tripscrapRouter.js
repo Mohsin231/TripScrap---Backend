@@ -3,15 +3,21 @@ const router = express.Router();
 const app = express();
 const TripScrap = require("../models/tripscrap");
 
-app.get("/todos", async (req, res, next) => {
+app.get("/", async (req, res, next) => {
   try {
+    console.log("test")
     const todos = await TripScrap.find({});
-    return success(res, todos);
+    // return success(res, todos);
+    res.json({
+      data: todos, 
+      message: "all the todos"
+    })
   } catch (err) {
-    next({ status: 400, message: "failed to get todos" });
+    next(err);
   }
 });
-app.post("/todos", async (req, res, next) => {
+
+app.post("/", async (req, res, next) => {
   try {
     const todo = await TripScrap.create(req.body);
     return success(res, todo);
@@ -19,6 +25,7 @@ app.post("/todos", async (req, res, next) => {
     next({ status: 400, message: "failed to create todo" });
   }
 });
+//if the data.length >= 1
 app.put("/todos/:id", async (req, res, next) => {
   try {
     const todo = await TripScrap.findByIdAndUpdate(req.params.id, req.body, {
