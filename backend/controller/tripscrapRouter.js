@@ -1,12 +1,28 @@
 const express = require("express");
 const router = express.Router();
-const app = express();
 const TripScrap = require("../models/tripscrap");
 
+// CRUD functionality means:
+// Create - make new instance of data (add data)
+// Read - view our data (retrieve data)
+// Update - edit existing data instance (modify existing data)
+// Delete - remove existing piece of data (modify existing data)
+
+// CRUD READ :
 router.get("/", (req, res, next) => {
   TripScrap.find({})
     .then((tripscrap) => res.json(tripscrap))
     .catch(next);
+});
+
+// CRUD CREATE :
+// where the user comes in and creates new data...
+router.post("/", (req, res, next) => {
+  TripScrap.create(req.body)
+    .then((tripscrap) => {
+      res.redirect("/");
+    })
+    .catch(console.error);
 });
 
 // app.get("/", async (req, res, next) => {
