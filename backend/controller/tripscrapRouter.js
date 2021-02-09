@@ -16,37 +16,45 @@ router.get("/", (req, res, next) => {
 });
 
 // CRUD CREATE :
-router.post("/", (req, res) => {
-  TripScrap.create(req.body)
-    .catch(console.error);
+// adds payload
+router.post("/formWhere", (req, res) => {
+  // TripScrap.create(req.body)
+  //   .catch(console.error);
+  TripScrap.find({ title: req.body.name }).then((tripscrap) =>
+    res.json(tripscrap)
+  );
+  // .catch(res.json({}));
+  // console.log(req.body.name); // catches data
+  // res.json({
+  //   name: "Britney",
+  // });
 });
 
 // CRUD UPDATE :
-// work in progress! 
-router.get('/:id', (req, res) => {
+// work in progress!
+router.get("/:id", (req, res) => {
   const id = req.params.id;
   TripScrap.findById(id)
     .then((tripscrap) => {
       res.render("/", tripscrap);
     })
     .catch(console.error);
-})
+});
 
-router.put('/:id', (req, res) => {
+router.put("/:id", (req, res) => {
   const id = req.params.id;
   TripScrap.findOneAndUpdate(
     { _id: id },
     {
       title: req.body.title,
-      complete: req / body.complete === 'on',
-    }, 
+      complete: req / body.complete === "on",
+    },
     { new: true }
   )
     .then((tripscrap) => {
-    res.render('tripscrap/show', tripscrap)
+      res.render("tripscrap/show", tripscrap);
     })
-  .catch(console.error)
-})
-
+    .catch(console.error);
+});
 
 module.exports = router;
