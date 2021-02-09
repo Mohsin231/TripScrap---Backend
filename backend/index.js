@@ -9,11 +9,11 @@ const cors = require("cors");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //cors setup below
-app.use(cors())
+app.use(cors());
 // app.use(cors({
 
 //   // origin: ["http://localhost:3001"], //telling cors that you will get request from this origin to access the data in this backend code. REACT will run on port 3001
-//   credentials: true, 
+//   credentials: true,
 //   optionsSuccessStatus: 200
 // }));
 app.use(methodOverride("_method"));
@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //test
 app.get("/", (req, res) => {
   // res.send("working");
-  res.json({name:"Mohsin"})
+  res.json();
 });
 
 app.set("port", process.env.PORT || 3001);

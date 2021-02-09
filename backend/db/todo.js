@@ -1,6 +1,6 @@
 const todoData = require('./todo.json')
 const Todo = require('../models/tripscrap')
-const User = require('./models/profile');
+// const User = require('./models/profile');
 
 
 Todo.deleteMany({})

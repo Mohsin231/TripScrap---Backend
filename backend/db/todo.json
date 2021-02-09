@@ -1,11 +1,11 @@
 [
-{  
- "title": "Grab a slice of pizza",
- "required": true
-
-},
-{
- "complete": true
-}
-
+ {  
+    "title": "Grab a slice of pizza",
+    "complete": false
+ },
+ {
+    "title": "Go visit the theatre",
+    "complete": false
+    
+ }
 ]
