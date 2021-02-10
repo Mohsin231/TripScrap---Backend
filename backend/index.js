@@ -8,7 +8,14 @@ const cors = require("cors");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+//cors setup below
 app.use(cors());
+// app.use(cors({
+
+//   // origin: ["http://localhost:3001"], //telling cors that you will get request from this origin to access the data in this backend code. REACT will run on port 3001
+//   credentials: true,
+//   optionsSuccessStatus: 200
+// }));
 app.use(methodOverride("_method"));
 // const db = require("../backend/db/connection.js")
 
@@ -18,17 +25,23 @@ app.use(methodOverride("_method"));
 
 const TripScrapRouter = require("./controller/tripscrapRouter");
 
+const DestinationRouter = require("./controller/DestinationRouter");
+
 app.use("/todos", TripScrapRouter);
 
+app.use("/destination", DestinationRouter);
+
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 //telling the app that we are going to use json to handle incoming payload
 
 //test
 app.get("/", (req, res) => {
-  res.send("working");
+  // res.send("working");
+  res.json();
 });
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3001);
 
 app.listen(app.get("port"), () => {
   console.log(`✅ PORT: ${app.get("port")} 🌟`);
