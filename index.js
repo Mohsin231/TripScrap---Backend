@@ -2,7 +2,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const app = express();
-
+const port = process.env.PORT || 3001
 const db = require("./models/connection");
 const cors = require("cors");
 
@@ -43,6 +43,9 @@ app.get("/", (req, res) => {
 
 app.set("port", process.env.PORT || 3001);
 
-app.listen(app.get("port"), () => {
-  console.log(`✅ PORT: ${app.get("port")} 🌟`);
-});
+app.listen(port, ()=> {
+  console.log(`running api backend on: ${port}`)
+})
+// app.listen(app.get("port"), () => {
+//   console.log(`✅ PORT: ${app.get("port")} 🌟`);
+// });
