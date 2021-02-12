@@ -25,11 +25,11 @@ app.use(methodOverride("_method"));
 
 const TripScrapRouter = require("./controller/tripscrapRouter");
 
-const DestinationRouter = require("./controller/DestinationRouter");
+// const DestinationRouter = require("./controller/DestinationRouter");
 
 app.use("/todos", TripScrapRouter);
 
-app.use("/destination", DestinationRouter);
+// app.use("/destination", DestinationRouter);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
